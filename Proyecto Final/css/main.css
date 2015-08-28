@@ -1,0 +1,27 @@
+body{
+	background-image: url("../images/background.png");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 100%; 
+}
+.transparent{
+	color: white !important;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.white{
+	color: white !important;
+}
+.canvas{
+	width: 100%;
+	height: 400px;
+}
+.landBG{
+	background-image: url("../images/level1.png");
+}
+.waterBG{
+	background-image: url("../images/level1.png");
+}
+.airBG{
+	background-image: url("../images/level1.png");
+}

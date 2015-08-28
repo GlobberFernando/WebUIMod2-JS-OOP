@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>WebUI Module 2 - Final Project</title>
+        <link href="css/libs/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
+    </head>
+    <body>
+        <div class="jumbotron transparent">
+            <div class="container">
+                <h1>WEB UI Module 2 - <small class="white">Proyecto Final</small></h1>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-md-3">
+                <div class="panel panel-default transparent">
+                    <div class="panel-body">
+                        <h1 class="white">Choose your vehicle!</h1>
+                        <button id="car" type="button" class="btn btn-primary btn-lg">CAR</button>
+                        <button id="ship" type="button" class="btn btn-danger btn-lg">SHIP</button>
+                        <button id="plane" type="button" class="btn btn-success btn-lg">PLANE</button>
+                    </div>
+                </div>
+                <div>
+                    <button id="drawcar" type="button" class="btn btn-success btn-lg">DIBUJAR VEHICULO</button><br>
+                    <label class="white">sx</label><input class="form-control" id="sx" type="number"/>
+                    <label class="white">sy</label><input class="form-control" id="sy" type="number"/>
+                    <label class="white">swidth</label><input class="form-control" id="swidth" type="number"/>
+                    <label class="white">sheight</label><input class="form-control" id="sheight" type="number"/>
+                    <label class="white">x</label><input class="form-control" id="x" type="number"/>
+                    <label class="white">y</label><input class="form-control" id="y" type="number"/>
+                    <label class="white">width</label><input class="form-control" id="width" type="number"/>
+                    <label class="white">height</label><input class="form-control" id="height" type="number"/>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <canvas id="canvas" class="canvas"></canvas>
+            </div>
+            <img id="bg" src="../Proyecto Final/images/level1.png" hidden/>
+            <img id="bg2" src="../Proyecto Final/images/level2.png" hidden/>
+            <img id="vehicle" src="../Proyecto Final/images/carsspritesheets.gif" hidden/>
+            <img id="vehicle2" src="../Proyecto Final/images/car3.png" hidden/>
+        </div>
+        <script src="scripts/libs/jquery-1.11.3.min.js"></script>
+        <script src="scripts/vehicle.js"></script>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>
