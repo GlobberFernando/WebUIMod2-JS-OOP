@@ -9,7 +9,7 @@
     <body>
         <div class="jumbotron transparent">
             <div class="container">
-                <h1>WEB UI Module 2 - <small class="white">Proyecto Final</small></h1>
+                <h1>WEB UI Module 2 - <small class="white">Final Project</small></h1>
             </div>
         </div>
         <div class="container-fluid">
@@ -17,12 +17,13 @@
                 <div class="panel panel-default transparent">
                     <div class="panel-body">
                         <h1 class="white">Choose your vehicle!</h1>
-                        <button id="car" type="button" class="btn btn-primary btn-lg">CAR</button>
-                        <button id="ship" type="button" class="btn btn-danger btn-lg">SHIP</button>
-                        <button id="plane" type="button" class="btn btn-success btn-lg">PLANE</button>
+                        <button id="car" type="button" class="btn btn-primary btn-lg btn-block">CAR</button>
+                        <button id="ship" type="button" class="btn btn-danger btn-lg btn-block">SHIP</button>
+                        <button id="plane" type="button" class="btn btn-success btn-lg btn-block">PLANE</button>
+                        <button id="overcraft" type="button" class="btn btn-default btn-lg btn-block">OVERCRAFT</button>
                     </div>
                 </div>
-                <div>
+                <!--<div>
                     <button id="drawcar" type="button" class="btn btn-success btn-lg">DIBUJAR VEHICULO</button><br>
                     <label class="white">sx</label><input class="form-control" id="sx" type="number"/>
                     <label class="white">sy</label><input class="form-control" id="sy" type="number"/>
@@ -32,15 +33,17 @@
                     <label class="white">y</label><input class="form-control" id="y" type="number"/>
                     <label class="white">width</label><input class="form-control" id="width" type="number"/>
                     <label class="white">height</label><input class="form-control" id="height" type="number"/>
-                </div>
+                </div>-->
             </div>
             <div class="col-md-9">
                 <canvas id="canvas" class="canvas"></canvas>
             </div>
-            <img id="bg" src="../Proyecto Final/images/level1.png" hidden/>
             <img id="bg2" src="../Proyecto Final/images/level2.png" hidden/>
-            <img id="vehicle" src="../Proyecto Final/images/carsspritesheets.gif" hidden/>
+            <img id="bg3" src="../Proyecto Final/images/level3.png" hidden/>
             <img id="vehicle2" src="../Proyecto Final/images/car3.png" hidden/>
+            <img id="vehicle3" src="../Proyecto Final/images/plane2.png" hidden/>
+            <img id="vehicle4" src="../Proyecto Final/images/watermoto.png" hidden/>
+            <img id="vehicle5" src="../Proyecto Final/images/overcraft.png" hidden/>
         </div>
         <script src="scripts/libs/jquery-1.11.3.min.js"></script>
         <script src="scripts/vehicle.js"></script>

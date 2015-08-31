@@ -48,8 +48,14 @@ function Propeller(){
 	this.setFins = function(nf) { _numOfFins = nf; acceleration = nf };
 	this.getFins = function(){ return _numOfFins };
 	this.changeSpinDirec = function(){
-		_spinDirec = -1;
-		_numOfFins = -1 * _numOfFins;
+		if(_spinDirec === 1){
+			_spinDirec = -1;
+			_numOfFins = -1 * _numOfFins;
+		}
+		else{
+			_spinDirec = 1;
+			_numOfFins = 1 * _numOfFins;
+		}
 		acceleration = _numOfFins;
 	};
 	this.getSpindDir = function(){ return _spinDirec };
@@ -86,17 +92,21 @@ function vehicle(PU, vmax){
 				_speed = _speed + this.propU.accel();
 			}
 			else{
-				_speed = _speed + _vmax;
+				_speed = _vmax;
 			}
 			_distance = _distance + _speed;
 			//console.log(this.speed()); 
+		},
+		brake: function(){
+			_speed = 0;
+			_distance = 0;
 		}
 	};
 }
 
 //Slide N° 7
 function LandV(rad){
-	var ve = new vehicle(1,150000);
+	var ve = new vehicle(1,15000);
 	ve.propU.setRadius(rad);
 	return {
 		accelerate: function(){
@@ -104,12 +114,13 @@ function LandV(rad){
 			console.log(this.speed());
 		},
 		speed: ve.speed,
-		distance: ve.distance
+		distance: ve.distance,
+		brake: ve.brake
 	}
 }
 
 function AirV(pow,ab){
-	var ve = new vehicle(2,300000000);
+	var ve = new vehicle(2,40000);
 	ve.propU.setPower(pow);
 	ve.propU.setAB(ab);
 	return {
@@ -121,12 +132,13 @@ function AirV(pow,ab){
 			ve.propU.onOffAB();
 		},
 		speed: ve.speed,
-		distance: ve.distance
+		distance: ve.distance,
+		brake: ve.brake
 	}
 }
 
 function WaterV(nf){
-	var ve = new vehicle(3,300000);
+	var ve = new vehicle(3,20000);
 	ve.propU.setFins(nf);
 	return {
 		accelerate: function(){
@@ -137,7 +149,8 @@ function WaterV(nf){
 			ve.propU.changeSpinDirec();
 		},
 		speed: ve.speed,
-		distance: ve.distance
+		distance: ve.distance,
+		brake: ve.brake
 	}
 }
 
@@ -168,5 +181,6 @@ function HibridV(rad, nf){
 		console.log(_speed);
 	}
 	this.speed = function(){ return _speed; }
+	this.brake = function(){ _speed = 0; landV.brake(); waterV.brake(); }
 	this.__proto__ = landV;
 }
